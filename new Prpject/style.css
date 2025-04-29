@@ -1,0 +1,132 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set the entire page height to 100vh (viewport height) */
+  body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Create a flex container that will center all child elements */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; /* Center text inside */
+    background-color: #f4f4f9;
+  }
+  
+  /* Style the header */
+  header {
+    margin-bottom: 20px;
+  }
+  
+  /* Style the input section */
+  .addValue {
+    margin-bottom: 20px;
+  }
+  
+  /* Style the input fields and buttons */
+  .myInputExpense {
+    padding: 10px;
+    margin: 5px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Change button color on hover */
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Styling for the charts */
+  canvas {
+    margin: 20px 0;
+  }
+  
+  /* Remove extra div closing tag (there was a redundant closing div tag in your HTML) */
+  
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.button-container button:hover {
+    background-color: #45a049;
+}
+
+.expense-form,
+.expense-list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.expense-list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.expense-list table,
+.expense-list th,
+.expense-list td {
+    border: 1px solid #ddd;
+}
+
+.expense-list th,
+.expense-list td {
+    padding: 8px;
+    text-align: left;
+}
+
+.expense-list th {
+    background-color: #f4f4f4;
+}
+
+.myInputExpense {
+    padding-left: 10px;
+    font-size: 20px;
+    height: 40px;
+    margin: 10px;
+}
+
+#inputSubmit {
+    font-size: 20px;
+    padding: 5px;
+}

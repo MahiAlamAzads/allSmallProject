@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="chart.js">
+    </script>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>ব্যক্তিগত খরচ ট্র্যাকার</h1>
+    </header>
+
+    <div class="addValue">
+        <input type="text" class="myInputExpense" id="inputName" placeholder="enter Name:">
+        <input type="number" class="myInputExpense" id="inputNumber" placeholder="enter Price:">
+        <button id="inputSubmit" onclick="inputSubmit()">জমা দিন </button>
+    </div>
+
+    
+    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+    <canvas id="myChart2" style="width:100%;max-width:700px"></canvas>
+    <h5 id="totalValue">show total:</h5>
+    <h5 id="elementTotal">show total:</h5>
+    <button id="sortBars" onclick="sortBars()">গুছান</button>
+
+    <input type="number" class="myInputExpense"  id="removeIndex">
+    <button id="removeAt" onclick="removeItem()">অপসরণ করুন</button>
+    </div>
+    <script src="index.js"></script>
+
+</body>
+
+</html>
+

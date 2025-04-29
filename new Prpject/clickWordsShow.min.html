@@ -1,0 +1,48 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Word Buttons</title><style>.button-container{margin-bottom:20px}button{margin:5px;padding:10px 15px;font-size:16px}#output{font-size:18px;font-family:Arial,sans-serif}</style></head><body><div class="button-container" id="buttonContainer"></div><p style="background-color:#000;color:#f0f8ff;padding:10px;display:inline-block" id="output">Clicked words:<br></p><button id="doneBtn">done</button><script>const words = [
+      "apple", "banana", "cherry", "dragonfruit", "elderberry",
+      "fig", "grape", "honeydew", "kiwi", "lemon"
+    ];
+
+    let selectedWords = [];
+    const buttonContainer = document.querySelector('.button-container');
+    const output = document.getElementById('output');
+    const doneBtn = document.getElementById('doneBtn');
+
+    let count = 1;
+    let count2 = 1;
+
+    words.forEach((word) => {
+      const button = document.createElement('button');
+      button.textContent = word;
+      button.classList.add(`btn-${count2}`);
+
+      button.addEventListener('click', () => {
+        if (!selectedWords.includes(word)) {
+          output.innerHTML += count + '. ' + word + '<br>';
+          selectedWords.push(word);
+          button.disabled = true; // Disable button after clicking
+          count++;
+        }
+      });
+
+      buttonContainer.appendChild(button);
+      count2++;
+    });
+
+    doneBtn.addEventListener('click', () => {
+      selectedWords.sort();
+    });</script><script></script></body></html><!-- const para = document.getElementById('myPara');
+  para.classList.add('myClass'); --><!-- const buttonContainer = document.getElementById('buttonContainer');
+  const output = document.getElementById('output');
+  let count = 1;
+  // Create buttons for each word
+  words.forEach(word => {
+    const button = document.createElement('button');
+    button.classList.add(`btn-${count}`);
+    button.textContent = word;
+    button.addEventListener('click', () => {
+      output.innerHTML += count+'.' + word + '<br> ';     
+    });
+    buttonContainer.appendChild(button);
+    count++;
+  }); -->

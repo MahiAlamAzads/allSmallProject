@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea id="forFilter"></textarea> <br>
+    <button onclick="createP()">Done</button>
+    <p id="text"></p>
+    <input type="search" id="searchArray" placeholder="Search for a word..." oninput="searchWord()">
+
+    <script>
+        let textArray = [];  // This will store the split words
+        let originalText = ''; // Store the original text to preserve punctuation
+
+        // Function to handle the "Done" button click
+        function createP() {
+            let forFilter = document.getElementById('forFilter').value;
+
+            // Store the original text for future reference (keeping punctuation)
+            originalText = forFilter;
+
+            // Clean the text (replace dots, trim spaces) but keep punctuation intact
+            let text = forFilter.replace(/\./g, ' ').replace(/\s+/g, ' ').trim();
+
+            // Save words in textArray (for searching)
+            textArray = text.split(' ');
+
+            // Display the clean text (but preserve punctuation in the background)
+            let formattedText = originalText;
+            document.querySelector('#text').innerHTML = formattedText;
+        }
+
+        // Search function
+        function searchWord() {
+            let searchTerm = document.getElementById('searchArray').value.toLowerCase();
+            let textElement = document.querySelector('#text');
+
+            // Create a copy of the original text with highlights
+            let highlightedText = originalText.split(' ').map(word => {
+                // Clean the word from punctuation for comparison
+                let cleanWord = word.replace(/[^\w\s]/g, '').toLowerCase();
+
+                // Check if the clean word matches the search term
+                if (cleanWord.includes(searchTerm) && searchTerm !== '') {
+                    return `<span class="highlight">${word}</span>`;  // Highlight matching words
+                }
+                return word;  // Leave other words unchanged
+            }).join(' ');  // Join words back into a string
+
+            // Update the paragraph with highlighted words
+            textElement.innerHTML = highlightedText;
+        }
+    </script>
+</body>
+
+</html>
